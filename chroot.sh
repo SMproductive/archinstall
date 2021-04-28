@@ -100,16 +100,18 @@ Skip with any key for doing everything yourself"
 read GUI
 
 echo install some essential packages
-pacman -S sudo vim vi man linux-headers dhcpcd
+pacman -S dhcpcd iwctl
 systemctl enable dhcpcd
 clear
 case $GUI in
 $I3)
     pacman -S i3 dmenu terminator
+    pacman -S sudo vim man linux-headers
     echo "exec i3" >/home/$USERNAME/.xsession
     ;;
 $XFCE)
     pacman -S xfce4 xfce4-goodies
+    pacman -S sudo vim man linux-headers
     echo "startxfce4" >/home/$USERNAME/.xsession
     ;;
 $GNOME)
