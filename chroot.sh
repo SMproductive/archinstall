@@ -100,8 +100,7 @@ Skip with any key for doing everything yourself"
 read GUI
 
 echo install some essential packages
-pacman -S dhcpcd iwctl
-systemctl enable dhcpcd
+pacman -S dhcpcd
 clear
 case $GUI in
 $I3)
@@ -126,6 +125,7 @@ $GNOME)
     ;;
 esac
 
+systemctl enable dhcpcd
 pacman -S xorg xorg-xinit
 clear
 
